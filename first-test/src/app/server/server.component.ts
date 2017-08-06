@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-server',
     templateUrl: 'server.component.html',
-    styleUrls: [ 'server.component.html' ]
+    styleUrls: [ 'server.component.css' ]
 })
 export class ServerComponent {
 
@@ -12,9 +12,5 @@ export class ServerComponent {
 
     constructor() {
         this.serverOnline = (Math.random() > 0.5) ? true : false;
-    }
-
-    getColour(): string {
-        return this.serverOnline ? 'green' : 'red';
     }
 }
