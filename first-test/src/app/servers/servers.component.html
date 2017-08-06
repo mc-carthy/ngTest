@@ -30,6 +30,4 @@
 <p *ngIf="!serverCreated">{{ serverCreationStatus }}</p>
 
 
-<app-server></app-server>
-<hr/>
-<app-server></app-server>
+<app-server *ngFor="let s of servers"></app-server>
