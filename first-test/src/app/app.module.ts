@@ -8,6 +8,7 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { UsernameComponent } from './username/username.component';
+import { IncrementingTimestampsComponent } from './incrementing-timestamps/incrementing-timestamps.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { UsernameComponent } from './username/username.component';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    UsernameComponent
+    UsernameComponent,
+    IncrementingTimestampsComponent
   ],
   imports: [
     BrowserModule,

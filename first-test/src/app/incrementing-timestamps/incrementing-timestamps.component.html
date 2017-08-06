@@ -1,0 +1,12 @@
+<button class="btn btn-primary" (click)="toggleDetails()">Toggle Details</button>
+<div class="row">
+    <div class="col-xs-6">
+        <p *ngIf="showDetails">Details!</p>
+    </div>
+    <div class="col-xs-6">
+        <p 
+            *ngFor="let input of inputs; let i = index"
+            [ngClass]="{'more-than-five': i > 5}"
+        >{{ input }}</p>
+    </div>
+</div>
