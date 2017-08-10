@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class AccountService {
@@ -17,6 +17,8 @@ export class AccountService {
             status: 'unknown'
         }
     ];
+
+    statusUpdated = new EventEmitter<string>();
 
     constructor() { }
 
