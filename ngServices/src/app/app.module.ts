@@ -8,6 +8,7 @@ import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 
 import { LoggingService } from './shared/services/logging.service';
+import { AccountService } from './shared/services/account.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoggingService } from './shared/services/logging.service';
     HttpModule
   ],
   providers: [
-      LoggingService
+      LoggingService,
+      AccountService
   ],
   bootstrap: [AppComponent]
 })
