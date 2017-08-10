@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './../shared/users.service';
-import { CountService } from './../shared/count.service';
 
 @Component({
     selector: 'app-active-users',
@@ -12,7 +11,6 @@ export class ActiveUsersComponent implements OnInit {
 
     constructor(
         private usersService: UsersService,
-        private countService: CountService
     ) { }
 
     ngOnInit () {
@@ -21,6 +19,5 @@ export class ActiveUsersComponent implements OnInit {
 
     onSetToInactive(name: string) {
         this.usersService.moveFromActiveToInactive(name);
-        this.countService.addToActiveToInactive();
     }
 }

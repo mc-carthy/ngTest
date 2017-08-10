@@ -18,10 +18,12 @@ export class CountService {
 
     addToActiveToInactive() {
         this.activeToInactiveCount++;
+        console.log("Active to Inactive count: " + this.activeToInactiveCount);
     }
 
     addToInactiveToActive() {
         this.inactiveToActiveCount++;
+        console.log("Inactive to Active count: " + this.inactiveToActiveCount);
     }
 
 }
