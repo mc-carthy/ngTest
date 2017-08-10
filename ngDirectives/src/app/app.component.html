@@ -12,6 +12,7 @@
                 <div *ngIf="onlyOdd">
                     <li 
                         class="list-group-item"
+                        [ngClass]="{ odd: n % 2 !== 0}"
                         *ngFor="let n of oddNumbers"
                     >
                     {{ n }}
@@ -20,6 +21,7 @@
                 <div *ngIf="!onlyOdd">
                     <li 
                         class="list-group-item"
+                        [ngClass]="{ odd: n % 2 !== 0}"
                         *ngFor="let n of numbers"
                     >
                     {{ n }}
