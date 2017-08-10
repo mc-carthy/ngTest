@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoggingService } from './../shared/services/logging.service';
 import { AccountService } from './../shared/services/account.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { AccountService } from './../shared/services/account.service';
 export class NewAccountComponent {
 
     constructor(
-        private loggingService: LoggingService,
         private accountService: AccountService
     ) {
         this.accountService.statusUpdated.subscribe(
@@ -20,6 +18,5 @@ export class NewAccountComponent {
 
     onCreateAccount(accountName: string, accountStatus: string) {
         this.accountService.addAccount(accountName, accountStatus);
-        this.loggingService.logStatusChange(accountStatus);
     }
 }
