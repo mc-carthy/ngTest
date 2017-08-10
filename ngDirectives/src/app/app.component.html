@@ -13,6 +13,7 @@
                     <li 
                         class="list-group-item"
                         [ngClass]="{ odd: n % 2 !== 0}"
+                        [ngStyle]="{ backgroundColor: n % 2 !== 0 ? 'cyan' : 'lightgreen' }"
                         *ngFor="let n of oddNumbers"
                     >
                     {{ n }}
@@ -22,6 +23,7 @@
                     <li 
                         class="list-group-item"
                         [ngClass]="{ odd: n % 2 !== 0}"
+                        [ngStyle]="{ backgroundColor: n % 2 !== 0 ? 'cyan' : 'lightgreen' }"
                         *ngFor="let n of numbers"
                     >
                     {{ n }}
