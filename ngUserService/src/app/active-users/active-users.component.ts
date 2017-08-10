@@ -1,17 +1,26 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsersService } from './../shared/users.service';
+import { CountService } from './../shared/count.service';
 
 @Component({
-  selector: 'app-active-users',
-  templateUrl: './active-users.component.html',
-  styleUrls: ['./active-users.component.css']
+    selector: 'app-active-users',
+    templateUrl: './active-users.component.html',
+    styleUrls: ['./active-users.component.css']
 })
-export class ActiveUsersComponent {
-  @Input() users: string[];
+export class ActiveUsersComponent implements OnInit {
+    users: string[];
 
-  constructor(private usersService: UsersService) {}
+    constructor(
+        private usersService: UsersService,
+        private countService: CountService
+    ) { }
 
-  onSetToInactive(name: string) {
-      this.usersService.moveFromActiveToInactive(name);
-  }
+    ngOnInit () {
+        this.users = this.usersService.getActiveUsers()
+    }
+
+    onSetToInactive(name: string) {
+        this.usersService.moveFromActiveToInactive(name);
+        this.countService.addToActiveToInactive();
+    }
 }

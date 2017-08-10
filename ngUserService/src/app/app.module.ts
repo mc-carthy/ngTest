@@ -8,6 +8,7 @@ import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
 
 import { UsersService } from './shared/users.service';
+import { CountService } from './shared/count.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UsersService } from './shared/users.service';
     HttpModule
   ],
   providers: [
-      UsersService
+      UsersService,
+      CountService
   ],
   bootstrap: [AppComponent]
 })
