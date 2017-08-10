@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { ImprovedHighlightDirective } from './shared/directives/improved-highlight/improved-highlight.directive';
+import { BasicHighlightDirective } from './shared/directives/basic-highlight/basic-highlight.directive';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BasicHighlightDirective
+    BasicHighlightDirective,
+    ImprovedHighlightDirective
   ],
   imports: [
     BrowserModule,
