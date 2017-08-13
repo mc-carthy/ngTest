@@ -12,6 +12,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 
 import { AuthGuardService } from "app/auth-guard.service";
 import { CanDeactivateGuardService } from './servers/edit-server/can-deactivate-guard.service';
+import { ServerResolverService } from './servers/server/server-resolver.service';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
         { path: ':id/:name', component: UserComponent },
     ] },
     { path: 'servers', canActivateChild: [AuthGuardService], component: ServersComponent, children: [
-        { path: ':id', component: ServerComponent },
+        { path: ':id', component: ServerComponent, resolve: {server: ServerResolverService} },
         { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuardService] },
     ] },
     // { path: 'not-found', component: PageNotFoundComponent },
