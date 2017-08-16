@@ -52,6 +52,8 @@ export class AppComponent {
         this.user.secretAnswer = this.singupForm.value.secret.secretAnswer;
         this.user.gender = this.singupForm.value.gender;
         this.submitted = true;
+
+        this.singupForm.reset();
     }
     //   onSubmit(form: NgForm) {
     //       console.log(form);
