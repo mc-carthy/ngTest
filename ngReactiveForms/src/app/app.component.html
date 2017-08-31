@@ -33,9 +33,17 @@
                         >
                         <span 
                             *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched"                
-                            class="help-block"
+                        class="help-block"
                         >
-                            Please enter a valid email address
+                            <span *ngIf="signupForm.get('userData.email').hasError('required')">
+                                Please enter an email address.
+                            </span>                           
+                            <span *ngIf="signupForm.get('userData.email').hasError('email') && !signupForm.get('userData.email').hasError('required')">
+                                This is not a valid email format.
+                            </span>                           
+                            <span *ngIf="signupForm.get('userData.email').hasError(['emailIsForbidden'])">
+                                This email address is not permitted.    
+                            </span>
                         </span>
                     </div>
                 </div>
