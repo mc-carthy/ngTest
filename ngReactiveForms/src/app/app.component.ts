@@ -50,6 +50,14 @@ export class AppComponent implements OnInit {
         this.setHobbies(['Testing', 'Developing', 'Creating bugs'])
     }
 
+    onChangeUsername() {
+        this.signupForm.patchValue({
+            'userData': {
+                'username': 'Test Username'
+            }
+        });
+    }
+
     setHobbies(hobbies: String[]) {
         for (const hobby of hobbies) {
             (<FormArray>this.signupForm.get('hobbies')).controls.push(new FormControl(hobby, Validators.required));
