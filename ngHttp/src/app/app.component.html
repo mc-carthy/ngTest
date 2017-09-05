@@ -3,6 +3,8 @@
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset2">
             <input #serverName type="text">
             <button (click)="onAddServer(serverName.value)" class="btn btn-primary">Add Server</button>
+            <br><br>
+            <button (click)="onSaveServers()" class="btn btn-success">Save Servers</button>
             <hr>
             <ul *ngFor="let server of servers" class="list-group">
                 <li class="list-group-item">
