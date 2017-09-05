@@ -1,5 +1,6 @@
 import { Http, Headers, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 @Injectable()
@@ -12,6 +13,10 @@ export class AppService {
             .map((response: Response) => {
                 const data = response.json();
                 return data;
+            })
+            .catch((error: Response) => {
+                console.log(error);
+                return Observable.throw('Something went wrong');
             });
     }
 
