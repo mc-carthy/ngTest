@@ -14,10 +14,15 @@ export class AppService {
         const headers = new Headers({
             'Content-Type': 'application/json'
         });
-        return this.http.post(
+        return this.http.put(
             'https://nghttp-ea652.firebaseio.com/data.json', 
             servers, 
             { headers: headers }
         );
+        // return this.http.post(
+        //     'https://nghttp-ea652.firebaseio.com/data.json', 
+        //     servers, 
+        //     { headers: headers }
+        // );
     }
 }
