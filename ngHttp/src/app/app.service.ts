@@ -8,6 +8,15 @@ export class AppService {
 
     constructor(private http: Http) { }
 
+    getAppName() {
+        return this.http.get('https://nghttp-ea652.firebaseio.com/appName.json')
+            .map(
+                (response: Response) => {
+                    return response.json();
+                }
+            );
+    }
+
     getServers() {
         return this.http.get('https://nghttp-ea652.firebaseio.com/data.json')
             .map((response: Response) => {
