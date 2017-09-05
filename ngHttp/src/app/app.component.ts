@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Response } from '@angular/http';
 import { AppService } from './app.service';
 
 @Component({
@@ -28,6 +29,19 @@ export class AppComponent {
             capacity: 50,
             id: this.generateId()
         })
+    }
+
+    onGetServers() {
+        this.appService.getServers()
+            .subscribe(
+                (response: Response) => {
+                    const data = response.json();
+                    console.log(data);
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
     }
 
     onSaveServers() {

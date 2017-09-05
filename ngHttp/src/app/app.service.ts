@@ -6,6 +6,10 @@ export class AppService {
 
     constructor(private http: Http) { }
 
+    getServers() {
+        return this.http.get('https://nghttp-ea652.firebaseio.com/data.json');
+    }
+
     storeServers (servers: any[]) {
         const headers = new Headers({
             'Content-Type': 'application/json'
