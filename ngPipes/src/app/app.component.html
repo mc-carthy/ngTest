@@ -9,7 +9,7 @@
             <hr>
             <ul class="list-group">
                 <li
-                    *ngFor="let server of servers | filter:filteredStatus:'status'"
+                    *ngFor="let server of servers | filter:filteredStatus:'status' | sort:'name':'desc'"
                     [ngClass]="getStatusClasses(server)"
                     class="list-group-item"
                 >
